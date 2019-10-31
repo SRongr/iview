@@ -153,8 +153,9 @@
                 if (rules.length&&this.required) {
                     return;
                 }else if (rules.length) {
-                    rules.every((rule) => {
+                    rules.some((rule) => {
                         this.isRequired = rule.required;
+                        return rule.required;
                     });
                 }else if (this.required){
                     this.isRequired = this.required;
